@@ -1,9 +1,28 @@
-<p> App </p>
+<h2>Gestion des voitures dans un garage</h2>
 
-<p> {{ title }} </p>
+<div ng-app="myApp" ng-controller="customersCtrl"> 
 
-<ul>
-  <li *ngFor= "let car of cars"> {{ car.brand }} {{ car.model }}</li>
-</ul>
+<div class="table-container">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Model</th>
+      <th>Brand</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Button</th>
+    </tr>
+    <tr *ngFor="let car of cars">
+      <td>{{ car.id }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.brand }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.color }}</td>
+      <td>
+        <button class="btn btn-primary" type="button" (click)="removeCar(car.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div> 
 
 <router-outlet></router-outlet>

@@ -19,11 +19,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      console.log('On init');
-      this.garageService.getCars().subscribe((datas) => {
-              this.cars = datas;
-            });
-      console.log(this.cars[0]);
+    console.log('On init');
+    this.garageService.getCars().subscribe((datas) => {
+      this.cars = datas;
+    });
+  }
+
+  removeCar(id: string) {
+    this.garageService.removeCar(id).subscribe(
+      () => this.ngOnInit(),
+      (err: any) => console.log(err)
+    );
   }
 }
 
