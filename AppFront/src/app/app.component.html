@@ -1,28 +1,42 @@
-<h2>Gestion des voitures dans un garage</h2>
-
 <div ng-app="myApp" ng-controller="customersCtrl"> 
+<div class = "container">
 
-<div class="table-container">
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Model</th>
-      <th>Brand</th>
-      <th>Year</th>
-      <th>Color</th>
-      <th>Button</th>
-    </tr>
-    <tr *ngFor="let car of cars">
-      <td>{{ car.id }}</td>
-      <td>{{ car.model }}</td>
-      <td>{{ car.brand }}</td>
-      <td>{{ car.year }}</td>
-      <td>{{ car.color }}</td>
-      <td>
-        <button class="btn btn-primary" type="button" (click)="removeCar(car.id)">Delete</button>
-      </td>
-    </tr>
+  <h2>Gestion des voitures dans un garage</h2>
+
+  <div class = "border">
+    <a routerLink = "/cars/car" class = "btn btn-md btn-outline-primary">New car</a>
+  </div>
+  <table class = "table table-bordered table-striped">
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Model</th>
+        <th>Brand</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <td><span>{{ car.id }}</span></td>
+        <td><span>{{ car.model }}</span></td>
+        <td><span>{{ car.brand }}</span></td>
+        <td><span>{{ car.year }}</span></td>
+        <td><span>{{ car.color }}</span></td>
+        <td>
+          <button id="buttonId" type="button" (click)="removeCar(car.id)">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        
+        </td>
+      </tr>
+    </tbody>
+
   </table>
 </div> 
+
 
 <router-outlet></router-outlet>

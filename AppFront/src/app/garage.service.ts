@@ -22,5 +22,8 @@ export class GarageService {
   removeCar(id: string){
     return this.httpClient.delete(this.API_URL + this.ENDPOINT_DELETE + id);
   }
-  
+
+  saveCar(inputData: Object){
+    return this.httpClient.post(this.API_URL + this.ENDPOINT_CARS, inputData)
+  }
 }

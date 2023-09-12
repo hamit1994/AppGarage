@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GarageService } from './garage.service';
-import { OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
